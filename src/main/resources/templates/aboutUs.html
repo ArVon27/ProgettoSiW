@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+
+
+<div class="helpCentrato">
+	<h1>Catering Online</h1><br>
+	<h2>Il miglior servizio, direttamente da casa!</h2>
+	<h3>Con cibo fresco e di qualita', siamo disponibili in tutta Italia</h3>
+	<h3><br><br><br>Contatti :<br>Cell : 31 4159265358<br> E-mail : sample@gmail.com</h3>
+</div>
+
+
+
+
+
+
+<div class="separatore"></div>
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+
+<div class="centroHome">
+	<div class="centroScrittaPiccola">I tuoi buffet salvati:</div>
+</div>
+	<div class="centroBuffet">
+		<table th:each="buffet:${buffet}">
+			<tr>
+				<td>
+				<div class="sezioneTabella">
+					<div class="nomeTabella">
+						<a th:href=" '/buffet/' + @{${buffet.id}}">[[${buffet.nome}]]</a>
+					</div>
+					
+					<div class="nomeChefTabella">by&nbsp <a th:href=" '/chef/' + @{${buffet.chef.id}}">[[${buffet.chef.nome}]] [[${buffet.chef.cognome}]]</a> </div>
+					<div class="descrizioneTabella">[[${buffet.descrizione}]]</div>
+						<div class="annuncioSpazioImmagine">
+							<a th:href=" '/Cancella/' + @{${buffet.id}}"><img src="/immagini/x.png"></a>
+						</div>
+				</div>
+				
+				</td>
+			</tr>
+		</table>		
+			
+	</div>
+
+
+<div th:if="${paginaVuota == 'si'}">
+<div class="centroHome">
+	<div class="centroScrittaGrande">Nessun Buffet salvato</div>
+</div>
+</div>
+
+
+
+
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+<div class="centroHome">
+	<div class="centroScrittaPiccola">Piatti disponibili:</div>
+</div>
+
+
+<div class="centroBuffetListaPiatti">
+	<table class="centroBuffetListaPiattiTabella">
+		<tr th:each="piatto:${piatti}">
+			<td>
+				<div class="aggiustaTestoBuffet"><a th:href=" '/piatto/' + @{${piatto.id}}">[[${piatto.nome}]]</a></div>
+				
+			</td>
+
+		</tr>
+	</table>
+</div>
+
+
+<div th:if="${paginaVuota == 'si'}">
+<div class="centroHome">
+	<div class="centroScrittaGrande">Nessun Piatto disponibile</div>
+</div>
+</div>
+
+
+
+
+<div class="separatore"></div>
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

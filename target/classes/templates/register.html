@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+
+
+<div class="centroLogin">
+	<div class="baseCentroSupporto">
+				<h1 class="centroScritta">Registrati</h1>
+				
+				<form th:action="@{/register}" method="POST">
+				<div><input class="inputLogin" type="text" name="username" placeholder="Username" id="username" required th:field="${utente.username}"></div>
+				
+				
+				<div><input class="inputLogin" type="password" name="password" placeholder="Password" id="password" required th:field="${utente.password}"></div>
+				
+				<div class="centroScritta">
+					<div class="sotto10px"><input class="tastoLogin" type="submit" value="Registrati" ></div>
+				</div>
+				
+				</form>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

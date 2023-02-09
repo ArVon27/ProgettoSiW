@@ -1,0 +1,65 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+
+
+
+
+
+<div class="centroLogin">
+	<div class="baseCentroSupporto">
+				<h1 class="centroScritta">Nuovo ingrediente:</h1>
+	
+							<form th:action="@{/ingredienteFatto}" method="POST">
+								<div>
+									<input class="nuovoIngredienteNome" name="nome" type="text" placeholder="Nome" id="nome" th:field="${ingrediente.nome}">
+								</div>
+								<div>
+									<input class="nuovoIngredienteNome" name="origine" type="text" placeholder="Paese d'origine" id="origine" th:field="${ingrediente.origine}">
+								</div>
+								<div>
+								<textarea  cols="30" rows="10" class="creaAnnuncioInputTesto" name="descrizione" type="text"  id="descrizione" th:field="${ingrediente.descrizione}" placeholder="Descrizione" ></textarea>
+								</div>
+								
+								
+								
+								<div class="sotto10px">
+								<input type="submit" value="Crea" class="nuovoIngredienteTastoCrea">
+								</div>
+								</div>
+						</form>
+	
+	</div>
+</div>
+
+
+
+
+
+
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

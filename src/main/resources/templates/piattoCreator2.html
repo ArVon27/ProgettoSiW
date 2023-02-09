@@ -1,0 +1,85 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+
+
+
+<div class="centroHome">
+	<div class="centroScrittaPiccola">Scegli gli ingredienti</div>
+</div>
+
+
+
+<div class="piattoCreatorTabelle">
+<div>
+<div class="centroScrittaPiccola">Scelti</div>
+	<table class="piattoTabellaCreator">
+	<tr th:each="ingrediente:${ingredienti2}">
+		<td>
+			<div class="ingredienteListaTabella">[[${ingrediente.nome}]]</div>
+		</td>
+	</tr>
+	</table>
+</div>
+<div>
+	<div class="centroScrittaPiccola">Disponibili</div>
+		<table class="piattoTabellaCreator">
+	<tr th:each="ingrediente:${ingredienti}">
+		<td>
+			<div class="ingredienteListaTabella">[[${ingrediente.nome}]]&nbsp-&nbsp<a th:href=" '/piattoFatto3/' + @{${ingrediente.id}}">Aggiungi</a></div>
+		</td>
+	</tr>
+	</table>
+</div>
+</div>
+
+
+
+
+<div class="piattoCreatorTabelle"> 
+	<a th:href="@{/piattoFatto4}">Crea </a>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="separatore"></div>
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

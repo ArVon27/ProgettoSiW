@@ -1,0 +1,92 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+
+<div class="centroHome">
+	<div class="centroScrittaPiccola">Buffet disponibili:</div>
+</div>
+<div th:if="${paginaVuota == 'no'}">
+	<div class="centroBuffet">
+		<table th:each="buffet:${buffet}">
+			<tr>
+				<td>
+				<div class="sezioneTabella">
+					<div class="nomeTabella">
+						<a th:href=" '/buffet/' + @{${buffet.id}}">[[${buffet.nome}]]</a>
+					</div>
+					<div class="nomeChefTabella">by&nbsp <a th:href=" '/chef/' + @{${buffet.chef.id}}">[[${buffet.chef.nome}]] [[${buffet.chef.cognome}]]</a> </div>
+					<div class="descrizioneTabella">[[${buffet.descrizione}]]</div>
+				</div>
+				
+				</td>
+			</tr>
+		</table>		
+			
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+		<div class="annuncioFreccie">
+			<a th:href="'/buffetlist/' +@{${page-1}}">
+				<div th:if="${paginaPrima == 'no'}" class="containerFrecciaBefore"><img src="/immagini/freccia2.png"></div>
+			</a>
+			<div th:if="${paginaPrima == 'no'}"   class="annuncioBefore">Pagina precedente</div>
+			
+			
+			<div th:if="${paginaFinale == 'no'}"   class="annuncioNext">Pagina successiva</div>
+			<a th:href="'/buffetlist/' +@{${page+1}}">
+				<div th:if="${paginaFinale == 'no'}" class="containerFreccia"><img src="/immagini/freccia.png"></div>
+			</a>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div th:if="${paginaVuota == 'si'}">
+<div class="centroHome">
+	<div class="centroScrittaGrande">Nessun Buffet disponibile</div>
+</div>
+
+</div>
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>

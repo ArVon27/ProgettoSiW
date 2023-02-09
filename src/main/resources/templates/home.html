@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel="stylesheet" href="/layout/styles/baseL.css" type="text/css">
+</head>
+
+<body>
+
+<div class="baseAlto">
+	<div class="baseLogin">
+		<a th:href="@{/profilo}">[[${utente.username}]]</a>
+	</div>
+	<div class="baseRegister"><a th:href="@{/logout}">Logout</a></div>
+	<div class="baseRegister"><a th:href="@{/aboutUs}">About Us</a></div>
+</div>
+
+
+<div class="titoloCentrale">
+	<div class="Catering">
+		<a th:href="@{/home}">
+			<img src="/immagini/CateringOnline.png">
+		</a>
+	</div>
+	<div class="Cameriere"><img src="/immagini/cameriere.jpg"></div>
+</div>
+
+<div class="centroHome">
+	<div class="centroScrittaPiccola">I nostri</div>
+	<div class="centroScrittaGrande"><a th:href="@{/buffetlist}">BUFFET</a></div>
+	<div class="buffet"><a th:href="@{/buffetlist}"><img src="/immagini/buffet.png"></a></div>
+</div>
+<div class="centroHome2">
+	<div class="centroScrittaPiccola">I nostri</div>
+	<div class="centroScrittaGrande"><a th:href="@{/piattolist}">PIATTI</a></div>
+	<div class="piatto"><a th:href="@{/piattolist}"><img src="/immagini/piatto.jpg"></a></div>
+</div>
+
+
+<div th:if="${utente.role=='ADMIN'}">
+	<div class="centroBassoHomeAdmin">
+	<div class="scrittaCentroBassoHomeAdmin"><a th:href="@{/chefCreator}">Aggiungi</a>/<a th:href="@{/chefModifica1}">Modifica</a>&nbspChef</div>
+	<div class="scrittaCentroBassoHomeAdmin"><a th:href="@{/buffetCreator}">Aggiungi</a>/<a th:href="@{/buffetModifica1}">Modifica</a>  &nbspBuffet</div>
+	<div class="scrittaCentroBassoHomeAdmin"><a th:href="@{/piattoCreator}">Aggiungi</a>/<a th:href="@{/piattoModifica1}">Modifica</a> &nbspPiatti</div>
+	<div class="scrittaCentroBassoHomeAdmin"><a th:href="@{/ingredienteCreator}">Aggiungi</a>/<a th:href="@{/ingredienteModifica1}">Modifica</a>  &nbspIngredienti</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<div class="separatore"></div>
+<div class="baseBasso">
+	<div class="baseCentroSupporto">Catering Online</div>
+</div>
+</body>
+</html>
